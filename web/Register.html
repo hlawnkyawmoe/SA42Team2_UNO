@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Styles/index.css">
+        <link rel="stylesheet" href="Styles/bootstrap.css">
+        <link href="Styles/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="Styles/jquery-ui.css" rel="stylesheet" type="text/css"/>
+        <link href="Styles/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+        <script src="JS/jquery-1.11.1.js" type="text/javascript"></script>
+        <script src="JS/jquery.js" type="text/javascript"></script>
+        <script src="JS/bootstrap.min.js" type="text/javascript"></script>
+        <script src="JS/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="JS/jquery-ui.js" type="text/javascript"></script>
+        <script src="JS/Individual.js" type="text/javascript"></script>
+        <script src="JS/handlebars-v1.3.0.js" type="text/javascript"></script>
+        <script src="JS/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+    </head>
+     <body>
+        <div class="wrapper">
+            <form action="RegistrationServlet" method="POST">
+                <center>
+                    <img style="padding-bottom: 30px" src="Images/uno1.jpg" alt="UNO" class="imgStyle">
+                </center>
+                <div class="content">
+                    <table class="tableStyle1" align="center">
+                        <tr>
+                            <td colspan="2" align="center" style="padding-top:30px; padding-bottom: 20px;">
+                                <h3><u>Player Registration</u></h3></td>
+                        </tr>
+                         <tr>
+                            <td>USER NAME :</td>
+                            <td><input type="text" id="txtUserName" name="txtUserName" value="" placeholder="User Name" required="required" ></td>
+                        </tr>
+                         
+                         <tr>
+                             <td>Password:</td>
+                         <td><input  type="password" id="txtPassword" name="txtPassword" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" placeholder="Password" name="pwd1" onchange="
+                              this.setCustomValidity(this.validity.patternMismatch ? 'Password must contain at least 6 characters, including UPPER/lowercase and numbers' : '');
+                              if(this.checkValidity()) form.pwd2.pattern = this.value;"></td>
+                       </tr>
+                       <tr><td>Confirm Password:</td>
+                           <td><input type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" placeholder="Re-enter Password" name="pwd2" onchange="
+                                     this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');"></td>
+                         
+                            <td style="padding-bottom: 30px; text-align: right;">
+                                <input type="submit" id = "btnSave" name="btnSave" value="Save">
+                            </td>
+                            <td style="padding-bottom: 30px; text-align: left;">
+                                <input type="reset" id = "btnReset" name="btnReset" value="Cancel">
+                            </td>          
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+         <footer>All rights reserved &#169; SA42 Advance Web Team 2</footer>
+    </body>
+</html>
